@@ -276,6 +276,34 @@ export default function DomainMap() {
           className="!bg-gray-900/80 !border-gray-700/60 !rounded-xl !shadow-lg [&>button]:!bg-gray-800/80 [&>button]:!border-gray-700/50 [&>button]:!text-gray-300 [&>button:hover]:!bg-gray-700"
         />
       </ReactFlow>
+      {/* Transform Legend Panel */}
+      <div className="absolute bottom-6 inset-x-0 z-10 pointer-events-none flex justify-center px-4">
+        <div className="bg-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-4 shadow-2xl pointer-events-auto w-full max-w-5xl">
+          <h3 className="text-xs font-bold text-gray-400 mb-3 uppercase tracking-widest text-center">Dictionary of Transformations</h3>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 text-xs font-mono">
+            <div className="flex flex-col bg-gray-950/50 rounded-lg p-2.5 border border-gray-800/50 transition-colors hover:border-violet-500/50">
+              <span className="text-violet-400 mb-1 font-sans font-semibold">Laplace (CT → s)</span>
+              <span className="text-gray-300">X(s) = ∫ x(t)e⁻ˢᵗ dt</span>
+            </div>
+            <div className="flex flex-col bg-gray-950/50 rounded-lg p-2.5 border border-gray-800/50 transition-colors hover:border-cyan-500/50">
+              <span className="text-cyan-400 mb-1 font-sans font-semibold">CTFT (CT → jω)</span>
+              <span className="text-gray-300">X(jω) = ∫ x(t)e⁻ʲʷᵗ dt</span>
+            </div>
+            <div className="flex flex-col bg-gray-950/50 rounded-lg p-2.5 border border-gray-800/50 transition-colors hover:border-emerald-500/50">
+              <span className="text-emerald-400 mb-1 font-sans font-semibold">Sampling (CT → DT)</span>
+              <span className="text-gray-300">x[n] = x(n·Tₛ)</span>
+            </div>
+            <div className="flex flex-col bg-gray-950/50 rounded-lg p-2.5 border border-gray-800/50 transition-colors hover:border-amber-500/50">
+              <span className="text-amber-400 mb-1 font-sans font-semibold">Z-Transform (DT → z)</span>
+              <span className="text-gray-300">X(z) = Σ x[n]z⁻ⁿ</span>
+            </div>
+            <div className="flex flex-col bg-gray-950/50 rounded-lg p-2.5 border border-gray-800/50 transition-colors hover:border-rose-500/50">
+              <span className="text-rose-400 mb-1 font-sans font-semibold">DFT (DT → Ω)</span>
+              <span className="text-gray-300">X[k] = Σ x[n]e⁻ʲ²ᵖⁱᵏⁿ/ᴺ</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
