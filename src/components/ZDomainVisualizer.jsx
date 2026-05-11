@@ -145,7 +145,7 @@ export default function ZDomainVisualizer() {
             When to use it
           </h3>
           <p className="text-sm text-gray-400 leading-relaxed">
-            The discrete equivalent of Laplace. Best for checking digital system <strong className="text-gray-300">stability</strong>: a digital filter is strictly stable if and only if all of its poles lie strictly <strong className="text-gray-300">inside the unit circle</strong> (<span className="font-mono text-gray-300">|z| < 1</span>).
+            The discrete equivalent of Laplace. Best for checking digital system <strong className="text-gray-300">stability</strong>: a digital filter is strictly stable if and only if all of its poles lie strictly <strong className="text-gray-300">inside the unit circle</strong> (<span className="font-mono text-gray-300">|z| &lt; 1</span>).
           </p>
         </div>
       </div>
