@@ -72,6 +72,40 @@ export default function TransferFunctionVisualizer() {
           <Plot data={[tfTrace]} layout={mkLayout('|H(s)| along real axis', 'σ (real part of s)')} config={plotCfg} useResizeHandler style={{ width: '100%', height: '260px' }} />
         </div>
       </div>
+
+      {/* Educational Content */}
+      <div className="max-w-6xl mx-auto mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 pb-12">
+        <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-5 shadow-lg">
+          <h3 className="text-indigo-400 font-semibold mb-3 flex items-center gap-2">
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+            Core Formula
+          </h3>
+          <p className="text-sm text-gray-200 leading-relaxed font-mono bg-gray-950 p-3 rounded-lg border border-gray-800 mb-4 text-center shadow-inner">
+            Y(s) = H(s) · X(s)
+          </p>
+          <p className="text-sm text-gray-400 leading-relaxed">
+            The Laplace Transform <span className="font-mono text-gray-300">H(s)</span> of the impulse response <span className="font-mono text-gray-300">h(t)</span>. Convolution in the time domain becomes simple algebraic multiplication in the complex frequency domain.
+          </p>
+        </div>
+        <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-5 shadow-lg">
+          <h3 className="text-indigo-400 font-semibold mb-3 flex items-center gap-2">
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+            Applications & Usage
+          </h3>
+          <p className="text-sm text-gray-400 leading-relaxed">
+            Essential for building block diagrams in control engineering. If you connect two systems in series, their combined transfer function is simply <span className="font-mono text-gray-300">H_{total}(s) = H_1(s) \cdot H_2(s)</span>.
+          </p>
+        </div>
+        <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-5 shadow-lg">
+          <h3 className="text-indigo-400 font-semibold mb-3 flex items-center gap-2">
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>
+            When to use it
+          </h3>
+          <p className="text-sm text-gray-400 leading-relaxed">
+            Best when you want to avoid performing complex time-domain convolutions. By factorizing the numerator and denominator into roots, you instantly find the system's zeros and poles.
+          </p>
+        </div>
+      </div>
     </section>
   )
 }

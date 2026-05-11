@@ -130,6 +130,40 @@ export default function LaplaceVisualizer() {
           <Plot data={[impulseTrace]} layout={hLayout} config={plotConfig} useResizeHandler style={{ width: '100%', height: '280px' }} />
         </div>
       </div>
+
+      {/* Educational Content */}
+      <div className="max-w-6xl mx-auto mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 pb-12">
+        <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-5 shadow-lg">
+          <h3 className="text-violet-400 font-semibold mb-3 flex items-center gap-2">
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+            Core Formula
+          </h3>
+          <p className="text-sm text-gray-200 leading-relaxed font-mono bg-gray-950 p-3 rounded-lg border border-gray-800 mb-4 text-center shadow-inner">
+            X(s) = ∫ x(t) e⁻ˢᵗ dt
+          </p>
+          <p className="text-sm text-gray-400 leading-relaxed">
+            Transforms time <span className="font-mono text-gray-300">t</span> into complex frequency <span className="font-mono text-gray-300">s = \sigma + j\omega</span>. The real part <span className="font-mono text-gray-300">\sigma</span> models exponential decay/growth, and the imaginary part <span className="font-mono text-gray-300">j\omega</span> models oscillation.
+          </p>
+        </div>
+        <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-5 shadow-lg">
+          <h3 className="text-violet-400 font-semibold mb-3 flex items-center gap-2">
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+            Applications & Usage
+          </h3>
+          <p className="text-sm text-gray-400 leading-relaxed">
+            Heavily used in control systems engineering (e.g., PID controllers, cruise control). By plotting poles (x) and zeros (o) on the s-plane, you can instantly determine if a system is stable.
+          </p>
+        </div>
+        <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-5 shadow-lg">
+          <h3 className="text-violet-400 font-semibold mb-3 flex items-center gap-2">
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>
+            When to use it
+          </h3>
+          <p className="text-sm text-gray-400 leading-relaxed">
+            Best for solving linear differential equations involving initial conditions and analyzing <strong className="text-gray-300">transient behavior</strong>. Laplace handles unstable systems and signals that grow to infinity, unlike Fourier.
+          </p>
+        </div>
+      </div>
     </section>
   )
 }
